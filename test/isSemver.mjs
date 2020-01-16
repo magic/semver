@@ -27,5 +27,4 @@ export default [
     expect: false,
     info: `${version} as object can be parsed as broken`,
   })),
-
 ]
