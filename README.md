@@ -38,7 +38,7 @@ const version = '0.0.1-alpha.0'
 
 const parsed = semver.parse(version)
 
-// parsed === { major: 0, minor: 0, patch: 1, alpha: { string: 'alpha', version: 0 } }
+// parsed === { major: 0, minor: 0, patch: 1, demo: { string: 'alpha', version: 0 } }
 
 const serialized = semver.serialize(parsed)
 
@@ -54,5 +54,8 @@ first release
 ##### 0.0.2
 add bump and isSemver
 
-##### 0.0.3 - unreleased
+##### 0.0.3
+handle -alpha and -beta separately to stop decrementing the version by mistake.
+
+##### 0.0.4 - unreleased
 ...

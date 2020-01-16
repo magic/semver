@@ -19,7 +19,7 @@ const version = '0.0.1-alpha.0'
 
 const parsed = semver.parse(version)
 
-// parsed === { major: 0, minor: 0, patch: 1, alpha: { string: 'alpha', version: 0 } }
+// parsed === { major: 0, minor: 0, patch: 1, demo: { string: 'alpha', version: 0 } }
 
 const serialized = semver.serialize(parsed)
 
