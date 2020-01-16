@@ -16,21 +16,21 @@ export const parse = v => {
     throw error(`${libName} first argument must be a valid semver version.`, 'E_NOT_SEMVER')
   }
 
-  const [major, minor, patch, alpha] = v.split('.')
+  const [major, minor, patch, demo] = v.split('.')
 
   const result = {
     major: parseInt(major),
     minor: parseInt(minor),
-    alpha: {},
+    demo: {},
   }
 
   if (is.string(patch) && patch.includes('-')) {
-    let [p, alphaString] = patch.split('-')
+    let [p, demoString] = patch.split('-')
     result.patch = parseInt(p)
 
-    result.alpha = {
-      string: alphaString,
-      version: parseInt(alpha),
+    result.demo = {
+      string: demoString,
+      version: parseInt(demo),
     }
   } else {
     result.patch = parseInt(patch)
@@ -42,8 +42,8 @@ export const parse = v => {
     throw error(`${libName} minor was not an Int: ${result.minor}`, 'E_MINOR_TYPE')
   } else if (!is.number(result.patch)) {
     throw error(`${libName} patch was not an Int: ${result.patch}`, 'E_PATCH_TYPE')
-  } else if (!is.empty(result.alpha) && !is.number(result.alpha.version)) {
-    throw error(`${libName} alpha was not an Int: ${result.alpha.version}`, 'E_ALPHA_TYPE')
+  } else if (!is.empty(result.demo) && !is.number(result.demo.version)) {
+    throw error(`${libName} demo was not an Int: ${result.demo.version}`, 'E_DEMO_TYPE')
   }
 
   result.v = v

@@ -54,8 +54,8 @@ export default [
     info: 'patch version string throws E_PATCH_TYPE',
   },
   {
-    fn: tryCatch(serialize, { ...oneoneone, alpha: { string: 'string', version: 'string' } }),
-    expect: t => t.name === 'E_ALPHA_TYPE',
-    info: 'alpha version string throws E_ALPHA_TYPE',
+    fn: tryCatch(serialize, { ...oneoneone, demo: { string: 'string', version: 'string' } }),
+    expect: t => t.name === 'E_DEMO_TYPE',
+    info: 'demo version string throws E_DEMO_TYPE',
   },
 ]

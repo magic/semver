@@ -30,50 +30,48 @@ export const bump = (version, options = {}) => {
     version.major += 1
     version.minor = 0
     version.patch = 0
-    version.alpha = {}
+    version.demo = {}
   } else if (options.minor) {
     version.minor += 1
     version.patch = 0
-    version.alpha = {}
+    version.demo = {}
   } else if (options.patch) {
     version.patch += 1
-    version.alpha = {}
+    version.demo = {}
   } else if (options.beta) {
-    if (is.empty(version.alpha)) {
-      version.alpha = {
+    if (is.empty(version.demo)) {
+      version.demo = {
+        string: 'beta',
+        version: 0,
+      }
+    } else if (version.demo.string === 'alpha') {
+      version.demo = {
         string: 'beta',
         version: 0,
       }
     } else {
-      if (version.alpha.string === 'alpha') {
-        version.alpha = {
-          string: 'beta',
-          version: 0,
-        }
-      } else {
-        version.alpha.version += 1
-      }
+      version.demo.version += 1
     }
   } else if (options.alpha) {
-    if (is.empty(version.alpha)) {
-      version.alpha = {
+    if (is.empty(version.demo)) {
+      version.demo = {
         string: 'alpha',
         version: 0,
       }
     } else {
-      if (version.alpha.string !== 'alpha') {
+      if (version.demo.string !== 'alpha') {
         throw error(
-          `${libName} got request to set ${version.alpha.string} to alpha. can not decrement versions.`,
+          `${libName} got request to set ${version.demo.string} to alpha. can not decrement versions.`,
           'E_NO_DECREMENT',
         )
       }
 
-      version.alpha.version += 1
+      version.demo.version += 1
     }
   } else {
     // no arguments given. bump alpha version if given, patch if not
-    if (!is.empty(version.alpha)) {
-      version.alpha.version += 1
+    if (!is.empty(version.demo)) {
+      version.demo.version += 1
     } else {
       version.patch += 1
     }

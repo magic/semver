@@ -31,18 +31,18 @@ export const serialize = v => {
     throw error(`${libName} patch was not an Int: ${patch}`, 'E_PATCH_TYPE')
   }
 
-  let alphaString = ''
+  let demoString = ''
 
-  if (!is.empty(v.alpha)) {
-    const { alpha } = v
-    alpha.version = parseInt(alpha.version)
+  if (!is.empty(v.demo)) {
+    let { version, string } = v.demo
+    version = parseInt(version)
 
-    if (!is.number(alpha.version)) {
-      throw error(`${libName} alpha was not an Int: ${alpha.version}`, 'E_ALPHA_TYPE')
+    if (!is.number(version)) {
+      throw error(`${libName} demo was not an Int: ${version}`, 'E_DEMO_TYPE')
     }
 
-    alphaString = `-${alpha.string}.${alpha.version}`
+    demoString = `-${string}.${version}`
   }
 
-  return `${major}.${minor}.${patch}${alphaString}`
+  return `${major}.${minor}.${patch}${demoString}`
 }

@@ -49,7 +49,7 @@ export default [
   },
   {
     fn: tryCatch(parse, '1.5.23-beta.string'),
-    expect: t => t.name === 'E_ALPHA_TYPE',
-    info: 'alpha version string throws E_ALPHA_TYPE',
+    expect: t => t.name === 'E_DEMO_TYPE',
+    info: 'demo version string throws E_DEMO_TYPE',
   },
 ]
