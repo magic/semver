@@ -1,4 +1,5 @@
 # @magic/semver
+
 semantic version parsing and stringification
 
 [![NPM version][npm-image]][npm-url]
@@ -23,7 +24,24 @@ semantic version parsing and stringification
 
 #### installation:
 ```javascript
-  npm install @magic/semver
+npm install @magic/semver
+```
+
+#### usage:
+```javascript
+import semver from '@magic/semver'
+
+// -alpha.0 is optional.
+const version = '0.0.1-alpha.0'
+
+const parsed = semver.parse(version)
+
+// parsed === { major: 0, minor: 0, patch: 1, alpha: { string: 'alpha', version: 0 } }
+
+const serialized = semver.serialize(parsed)
+
+// version === serialized
+
 ```
 
 ##### changelog
