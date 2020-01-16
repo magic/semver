@@ -11,4 +11,6 @@ export default [
     fn: is.deep.eq(semver.serialize, semver.stringify),
     info: 'serialize equals stringify is a function',
   },
+  { fn: () => semver.bump, expect: is.fn, info: 'bump is a function' },
+  { fn: () => semver.isSemver, expect: is.fn, info: 'isSemver is a function' },
 ]
