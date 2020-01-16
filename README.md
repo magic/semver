@@ -47,7 +47,7 @@ const serialized = semver.serialize(parsed)
 ##### changelog
 
 ##### 0.0.1
-first commit
+first release
 
 ##### 0.0.2
 add bump and isSemver
