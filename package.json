@@ -1,6 +1,6 @@
 {
   "name": "@magic/semver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Wizards & Witches",
   "description": "semantic version parsing and serialization.",
   "license": "AGPL-3.0",
