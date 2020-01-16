@@ -2,6 +2,8 @@
 
 semantic version parsing and stringification
 
+[html-docs](https://github.magic.io/semver)
+
 [![NPM version][npm-image]][npm-url]
 [![Linux Build Status][travis-image]][travis-url]
 [![Windows Build Status][appveyor-image]][appveyor-url]
