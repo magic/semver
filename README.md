@@ -46,8 +46,11 @@ const serialized = semver.serialize(parsed)
 
 ##### changelog
 
-##### 0.0.1 - unreleased
+##### 0.0.1
 first commit
 
-##### 0.0.2 - unreleased
+##### 0.0.2
+add bump and isSemver
+
+##### 0.0.3 - unreleased
 ...
