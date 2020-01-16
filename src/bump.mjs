@@ -38,6 +38,22 @@ export const bump = (version, options = {}) => {
   } else if (options.patch) {
     version.patch += 1
     version.alpha = {}
+  } else if (options.beta) {
+    if (is.empty(version.alpha)) {
+      version.alpha = {
+        string: 'beta',
+        version: 0,
+      }
+    } else {
+      if (version.alpha.string === 'alpha') {
+        version.alpha = {
+          string: 'beta',
+          version: 0,
+        }
+      } else {
+        version.alpha.version += 1
+      }
+    }
   } else if (options.alpha) {
     if (is.empty(version.alpha)) {
       version.alpha = {
@@ -45,6 +61,13 @@ export const bump = (version, options = {}) => {
         version: 0,
       }
     } else {
+      if (version.alpha.string !== 'alpha') {
+        throw error(
+          `${libName} got request to set ${version.alpha.string} to alpha. can not decrement versions.`,
+          'E_NO_DECREMENT',
+        )
+      }
+
       version.alpha.version += 1
     }
   } else {
