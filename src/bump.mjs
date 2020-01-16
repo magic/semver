@@ -9,9 +9,9 @@ import { isSemver } from './isSemver.mjs'
 
 const libName = '@magic/semver.bump'
 
-export const bump = async (version, options = {}) => {
+export const bump = (version, options = {}) => {
   if (is.empty(version)) {
-    throw error(`${libName} expects arguments to be non-empty`, 'E_ARG_EMPTY')
+    throw error(`${libName} expects arguments to be non-empty`, 'E_VERSION_EMPTY')
   }
 
   const isString = is.string(version)
@@ -28,10 +28,16 @@ export const bump = async (version, options = {}) => {
 
   if (options.major) {
     version.major += 1
+    version.minor = 0
+    version.patch = 0
+    version.alpha = {}
   } else if (options.minor) {
     version.minor += 1
+    version.patch = 0
+    version.alpha = {}
   } else if (options.patch) {
     version.patch += 1
+    version.alpha = {}
   } else if (options.alpha) {
     if (is.empty(version.alpha)) {
       version.alpha = {
