@@ -14,6 +14,6 @@ const spec = {
 }
 
 export default [
-  { fn: () => version.lib(semver, spec), expect: is.len.eq(0) },
-  { fn: () => version.spec(spec, semver), expect: is.len.eq(0) },
+  { fn: () => version.lib(semver, spec), expect: is.empty },
+  { fn: () => version.spec(spec, semver), expect: is.empty },
 ]
