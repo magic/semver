@@ -57,5 +57,9 @@ add bump and isSemver
 ##### 0.0.3
 handle -alpha and -beta separately to stop decrementing the version by mistake.
 
-##### 0.0.4 - unreleased
+##### 0.0.4
+fix behaviour of appending -alpha.0 and -beta.0.
+these two edgecases also bump patch version now.
+
+##### 0.0.5 - unreleased
 ...
