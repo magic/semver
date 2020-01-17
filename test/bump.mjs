@@ -57,21 +57,21 @@ export default [
 
   {
     fn: bump('0.1.1', { alpha: true }),
-    expect: '0.1.1-alpha.0',
-    info: '0.1.1 without { alpha: true } bumps to 0.1.1-alpha.0',
+    expect: '0.1.2-alpha.0',
+    info: '0.1.1 without { alpha: true } bumps to 0.1.2-alpha.0',
   },
 
   { fn: bump('0.1.1'), expect: '0.1.2', info: '0.1.1 can be bumped' },
 
   {
     fn: bump('0.1.1', { alpha: true }),
-    expect: '0.1.1-alpha.0',
-    info: 'args.alpha appends -alpha.0 correctly',
+    expect: '0.1.2-alpha.0',
+    info: 'args.alpha appends -alpha.0 and bumps patch correctly',
   },
   {
     fn: bump('0.1.1', { beta: true }),
-    expect: '0.1.1-beta.0',
-    info: 'args.alpha appends -beta.0 correctly',
+    expect: '0.1.2-beta.0',
+    info: 'args.beta appends -beta.0 and bumps patch correctly',
   },
   {
     fn: bump('0.1.1-alpha.0', { alpha: true }),
@@ -86,7 +86,7 @@ export default [
   {
     fn: bump('0.1.1-beta.0', { beta: true }),
     expect: '0.1.1-beta.1',
-    info: 'args.beta appends -beta.0 correctly',
+    info: 'args.beta bumps 0.1.1-beta.0 to 0.1.1-beta.1 correctly',
   },
   {
     fn: tryCatch(bump, '0.1.1-beta.0', { alpha: true }),
