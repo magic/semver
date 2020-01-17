@@ -61,5 +61,8 @@ handle -alpha and -beta separately to stop decrementing the version by mistake.
 fix behaviour of appending -alpha.0 and -beta.0.
 these two edgecases also bump patch version now.
 
-##### 0.0.5 - unreleased
+##### 0.0.5
+add isBigger and isSmaller version comparison
+
+##### 0.0.6 - unreleased
 ...
