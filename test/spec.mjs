@@ -1,16 +1,19 @@
-import is from '@magic/types'
+import { is, version } from '@magic/test'
 
 import semver from '../src/index.mjs'
 
+const spec = {
+  parse: is.fn,
+  stringify: is.fn,
+  serialize: is.fn,
+  stringify: is.fn,
+  bump: is.fn,
+  isSemver: is.fn,
+  isBigger: is.fn,
+  isSmaller: is.fn,
+}
+
 export default [
-  { fn: () => semver, expect: is.object, info: '@magic/semver exports an object' },
-  { fn: () => semver.parse, expect: is.fn, info: 'parse is a function' },
-  { fn: () => semver.stringify, expect: is.fn, info: 'stringify is a function' },
-  { fn: () => semver.serialize, expect: is.fn, info: 'serialize is a function' },
-  {
-    fn: is.deep.eq(semver.serialize, semver.stringify),
-    info: 'serialize equals stringify is a function',
-  },
-  { fn: () => semver.bump, expect: is.fn, info: 'bump is a function' },
-  { fn: () => semver.isSemver, expect: is.fn, info: 'isSemver is a function' },
+  { fn: () => version.lib(semver, spec), expect: is.len.eq(0) },
+  { fn: () => version.spec(spec, semver), expect: is.len.eq(0) },
 ]
