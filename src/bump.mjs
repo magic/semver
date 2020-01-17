@@ -40,6 +40,7 @@ export const bump = (version, options = {}) => {
     version.demo = {}
   } else if (options.beta) {
     if (is.empty(version.demo)) {
+      version.patch += 1
       version.demo = {
         string: 'beta',
         version: 0,
@@ -54,6 +55,8 @@ export const bump = (version, options = {}) => {
     }
   } else if (options.alpha) {
     if (is.empty(version.demo)) {
+      version.patch += 1
+
       version.demo = {
         string: 'alpha',
         version: 0,
