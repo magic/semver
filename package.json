@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@magic/error": "0.0.2",
-    "@magic/fs": "0.0.3",
+    "@magic/fs": "0.0.4",
     "@magic/types": "0.1.10"
   },
   "devDependencies": {
