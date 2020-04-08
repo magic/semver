@@ -64,5 +64,8 @@ these two edgecases also bump patch version now.
 ##### 0.0.5
 add isBigger and isSmaller version comparison
 
-##### 0.0.6 - unreleased
+##### 0.0.6
+remove @magic/fs
+
+##### 0.0.7 - unreleased
 ...
