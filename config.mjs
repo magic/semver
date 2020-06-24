@@ -4,5 +4,5 @@ export default {
   WEB_ROOT: '/semver/',
   URL: 'magic.github.io/semver',
   THEME: 'docs',
-  HOIST: ['Gdpr', 'LightSwitch'],
+  HOIST: ['NoSpy', 'LightSwitch'],
 }
