@@ -29,7 +29,7 @@
     "url": "https://github.com/magic/semver/issues"
   },
   "dependencies": {
-    "@magic/error": "0.0.6",
+    "@magic/error": "0.0.7",
     "@magic/types": "0.1.13"
   },
   "devDependencies": {
