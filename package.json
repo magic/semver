@@ -29,8 +29,8 @@
     "url": "https://github.com/magic/semver/issues"
   },
   "dependencies": {
-    "@magic/error": "0.0.7",
-    "@magic/types": "0.1.13"
+    "@magic/error": "0.0.8",
+    "@magic/types": "0.1.14"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.11",
