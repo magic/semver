@@ -6,6 +6,7 @@
   "license": "AGPL-3.0",
   "homepage": "https://magic.github.io/semver",
   "main": "src/index.mjs",
+  "type": "module",
   "scripts": {
     "start": "t -p",
     "test": "t --exclude docs example config.js",
