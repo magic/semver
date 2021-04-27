@@ -8,7 +8,6 @@ semantic version parsing and stringification
 [![Linux Build Status][travis-image]][travis-url]
 [![Windows Build Status][appveyor-image]][appveyor-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
-[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 
 [npm-image]: https://img.shields.io/npm/v/@magic/semver.svg
@@ -19,8 +18,6 @@ semantic version parsing and stringification
 [appveyor-url]: https://ci.appveyor.com/project/magic/semver/branch/master
 [coveralls-image]: https://coveralls.io/repos/github/magic/semver/badge.svg
 [coveralls-url]: https://coveralls.io/github/magic/semver
-[greenkeeper-image]: https://badges.greenkeeper.io/magic/semver.svg
-[greenkeeper-url]: https://badges.greenkeeper.io/magic/semver.svg
 [snyk-image]: https://snyk.io/test/github/magic/semver/badge.svg
 [snyk-url]: https://snyk.io/test/github/magic/semver
 
