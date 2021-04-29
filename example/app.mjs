@@ -1,7 +1,7 @@
 export const state = {
-  title: '@magic/log',
-  description: 'nodejs console.log with environment aware loglevels.',
-  logotext: '@magic/log',
+  title: '@magic/semver',
+  description: 'parse/serialize semantic version strings.',
+  logotext: '@magic/semver',
   menu: [
     { to: '/#getting-started', text: 'getting started' },
     { to: '/#install', text: 'install' },

@@ -2,7 +2,7 @@ export const View = state => [
   h1(state.title),
   p(state.description),
 
-  GitBadges('magic/semver'),
+  GitBadges('@magic/semver'),
 
   h2({ id: 'getting-started' }, 'getting started'),
   p('be in a nodejs project.'),
