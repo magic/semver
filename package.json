@@ -30,7 +30,7 @@
     "url": "https://github.com/magic/semver/issues"
   },
   "dependencies": {
-    "@magic/error": "0.0.8",
+    "@magic/error": "0.0.9",
     "@magic/types": "0.1.15"
   },
   "devDependencies": {
@@ -39,9 +39,9 @@
     "@magic-modules/no-spy": "0.0.6",
     "@magic-modules/pre": "0.0.10",
     "@magic-themes/docs": "0.0.13",
-    "@magic/core": "0.0.119",
+    "@magic/core": "0.0.120",
     "@magic/format": "0.0.22",
-    "@magic/test": "0.1.66"
+    "@magic/test": "0.1.68"
   },
   "files": [
     "src"
