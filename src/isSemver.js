@@ -2,18 +2,27 @@ import is from '@magic/types'
 import { parse } from './parse.js'
 import { serialize } from './serialize.js'
 
+/**
+ * @typedef {import('./types.js').Version} Version
+ */
+
+/**
+ * @param {Version | string | unknown} v
+ * @returns {v is Version}
+ *
+ */
 export const isSemver = v => {
   try {
     if (is.string(v)) {
       const p = parse(v)
 
-      return is.obj(p) && is.num(p.major)
+      return is.obj(p) && is.num(p.major) && is.num(p.minor) && is.num(p.patch)
     } else {
       const s = serialize(v)
 
       return is.str(s) && is.num(parseInt(s.split('.')[1]))
     }
-  } catch (_) {
-    return false
-  }
+  } catch {}
+
+  return false
 }

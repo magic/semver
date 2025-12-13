@@ -3,6 +3,15 @@ import error from '@magic/error'
 
 const libName = `@magic/semver.parse:`
 
+/**
+ * @typedef {import('./types.js').Version} Version
+ * @typedef {import('./types.js').VersionResult} VersionResult
+ */
+
+/**
+ * @param {string} v
+ * @returns {VersionResult}
+ */
 export const parse = v => {
   if (is.empty(v)) {
     throw error(`${libName} first argument must be non-empty`, 'E_ARG_EMPTY')
@@ -18,10 +27,12 @@ export const parse = v => {
 
   const [major, minor, patch, demo] = v.split('.')
 
+  /** @type {VersionResult} */
   const result = {
     major: parseInt(major),
     minor: parseInt(minor),
-    demo: {},
+    patch: -1,
+    v: '',
   }
 
   if (is.string(patch) && patch.includes('-')) {
@@ -42,8 +53,8 @@ export const parse = v => {
     throw error(`${libName} minor was not an Int: ${result.minor}`, 'E_MINOR_TYPE')
   } else if (!is.number(result.patch)) {
     throw error(`${libName} patch was not an Int: ${result.patch}`, 'E_PATCH_TYPE')
-  } else if (!is.empty(result.demo) && !is.number(result.demo.version)) {
-    throw error(`${libName} demo was not an Int: ${result.demo.version}`, 'E_DEMO_TYPE')
+  } else if (!is.empty(result.demo) && !is.number(result.demo?.version)) {
+    throw error(`${libName} demo was not an Int: ${result.demo?.version}`, 'E_DEMO_TYPE')
   }
 
   result.v = v

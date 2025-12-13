@@ -9,14 +9,33 @@ import { isSemver } from './isSemver.js'
 
 const libName = '@magic/semver.bump'
 
-export const bump = (version, options = {}) => {
-  if (is.empty(version)) {
+/**
+ *  @typedef {import('./types.js').Version} Version
+ */
+
+/**
+ * @param {string} v
+ * @param {object} options
+ * @param {boolean} [options.major]
+ * @param {boolean} [options.minor]
+ * @param {boolean} [options.patch]
+ * @param {boolean} [options.beta]
+ * @param {boolean} [options.alpha]
+ * @returns {Version | string}
+ */
+export const bump = (v, options = {}) => {
+  if (is.empty(v)) {
     throw error(`${libName} expects arguments to be non-empty`, 'E_VERSION_EMPTY')
   }
 
-  const isString = is.string(version)
+  /** @type {Partial<Version> } */
+  let version
+
+  const isString = is.string(v)
   if (isString) {
-    version = parse(version)
+    version = parse(v)
+  } else {
+    version = v
   }
 
   if (!isSemver(version)) {
@@ -26,18 +45,17 @@ export const bump = (version, options = {}) => {
     )
   }
 
+  version.demo = version.demo || { string: '', version: -1 }
+
   if (options.major) {
     version.major += 1
     version.minor = 0
     version.patch = 0
-    version.demo = {}
   } else if (options.minor) {
     version.minor += 1
     version.patch = 0
-    version.demo = {}
   } else if (options.patch) {
     version.patch += 1
-    version.demo = {}
   } else if (options.beta) {
     if (is.empty(version.demo)) {
       version.patch += 1
