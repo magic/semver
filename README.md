@@ -118,6 +118,10 @@ update dependencies
 - add typescript
 - update dependencies
 
-##### 0.0.18 - unreleased
+##### 0.0.18
+
+- fix handling a v in front of the version, eg v0.0.1
+
+##### 0.0.19 - unreleased
 
 ...
