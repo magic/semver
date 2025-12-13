@@ -5,18 +5,25 @@
   "description": "semantic version parsing and serialization.",
   "license": "AGPL-3.0",
   "homepage": "https://magic.github.io/semver",
-  "main": "src/index.mjs",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "module": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "t -p",
+    "start": "npm test",
+    "build": "npm run build:docs",
+    "build:types": "tsc && npm run format",
+    "prepublishOnly": "npm run test && npm run build:types",
     "test": "t --exclude docs example config.js",
     "format": "f -w --exclude docs",
     "format:check": "f",
     "calls": "calls",
-    "build": "NODE_ENV=production magic build",
+    "build:docs": "NODE_ENV=production magic build",
     "prod": "NODE_ENV=production magic build serve",
     "clean": "magic clean",
-    "dev": "magic dev"
+    "serve": "magic serve",
+    "dev": "magic dev",
+    "lint": "tsc --noEmit"
   },
   "engine": {
     "node": ">=14.15.4"
@@ -41,7 +48,8 @@
     "@magic-themes/docs": "0.0.15",
     "@magic/core": "0.0.156",
     "@magic/format": "0.0.69",
-    "@magic/test": "0.2.28"
+    "@magic/test": "0.2.28",
+    "typescript": "5.9.3"
   },
   "files": [
     "src"
