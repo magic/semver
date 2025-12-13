@@ -113,6 +113,11 @@ update dependencies
 
 update dependencies
 
-##### 0.0.17 - unreleased
+##### 0.0.17
+
+- add typescript
+- update dependencies
+
+##### 0.0.18 - unreleased
 
 ...
