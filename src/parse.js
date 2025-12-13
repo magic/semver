@@ -29,7 +29,7 @@ export const parse = v => {
 
   /** @type {VersionResult} */
   const result = {
-    major: parseInt(major),
+    major: parseInt(major.replace('v', '')),
     minor: parseInt(minor),
     patch: -1,
     v,
@@ -48,7 +48,7 @@ export const parse = v => {
   }
 
   if (!is.number(result.major)) {
-    throw error(`${libName} major was not an Int: ${result.major}`, 'E_MAJOR_TYPE')
+    throw error(`${libName} major was not an Int: ${v} ${result.major}`, 'E_MAJOR_TYPE')
   } else if (!is.number(result.minor)) {
     throw error(`${libName} minor was not an Int: ${result.minor}`, 'E_MINOR_TYPE')
   } else if (!is.number(result.patch)) {

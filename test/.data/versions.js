@@ -1,4 +1,6 @@
 export const versions = {
+  'v0.0.1': { major: 0, minor: 0, patch: 1, v: 'v0.0.1' },
+  'v1.0.0': { major: 1, minor: 0, patch: 0, v: 'v1.0.0' },
   '0.0.1': { major: 0, minor: 0, patch: 1, v: '0.0.1' },
   '1.0.0': { major: 1, minor: 0, patch: 0, v: '1.0.0' },
   '0.23.5-alpha.12': {
