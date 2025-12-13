@@ -55,8 +55,7 @@ export const serialize = v => {
     demoString = `-${string}.${version}`
   }
 
-
-  const prefix =is.str(v.v) && v.v.startsWith('v') ? 'v' : ''
+  const prefix = is.str(v.v) && v.v.startsWith('v') ? 'v' : ''
 
   return `${prefix}${major}.${minor}.${patch}${demoString}`
 }
