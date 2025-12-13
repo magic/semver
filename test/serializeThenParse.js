@@ -1,6 +1,6 @@
-import { parse, serialize } from '../src/index.mjs'
+import { parse, serialize } from '../src/index.js'
 
-import { versions } from './.data/versions.mjs'
+import { versions } from './.data/versions.js'
 
 export default Object.entries(versions).map(([version]) => ({
   fn: serialize(parse(serialize(parse(version)))),

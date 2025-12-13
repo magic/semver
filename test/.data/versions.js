@@ -1,6 +1,6 @@
 export const versions = {
-  '0.0.1': { major: 0, minor: 0, patch: 1, demo: {}, v: '0.0.1' },
-  '1.0.0': { major: 1, minor: 0, patch: 0, demo: {}, v: '1.0.0' },
+  '0.0.1': { major: 0, minor: 0, patch: 1, v: '0.0.1' },
+  '1.0.0': { major: 1, minor: 0, patch: 0, v: '1.0.0' },
   '0.23.5-alpha.12': {
     major: 0,
     minor: 23,
@@ -18,8 +18,8 @@ export const versions = {
 }
 
 export const broken = {
-  'string.0.1': { major: 'string', minor: 0, patch: 1, demo: {}, v: 'string.0.1' },
-  '1.string.0': { major: 1, minor: 'string', patch: 0, demo: {}, v: '1.string.0' },
+  'string.0.1': { major: 'string', minor: 0, patch: 1, v: 'string.0.1' },
+  '1.string.0': { major: 1, minor: 'string', patch: 0, v: '1.string.0' },
   '0.23.string-alpha.12': {
     major: 0,
     minor: 23,

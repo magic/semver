@@ -1,6 +1,6 @@
 import { version } from '@magic/test'
 
-import semver from '../src/index.mjs'
+import semver from '../src/index.js'
 
 const spec = {
   parse: 'fn',

@@ -32,7 +32,7 @@ export const parse = v => {
     major: parseInt(major),
     minor: parseInt(minor),
     patch: -1,
-    v: '',
+    v,
   }
 
   if (is.string(patch) && patch.includes('-')) {
@@ -56,8 +56,6 @@ export const parse = v => {
   } else if (!is.empty(result.demo) && !is.number(result.demo?.version)) {
     throw error(`${libName} demo was not an Int: ${result.demo?.version}`, 'E_DEMO_TYPE')
   }
-
-  result.v = v
 
   return result
 }

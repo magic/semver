@@ -1,60 +1,54 @@
 import { is, tryCatch } from '@magic/test'
 
-import { serialize } from '../src/serialize.mjs'
+import { parse } from '../src/parse.js'
 
-import { versions } from './.data/versions.mjs'
+import { versions } from './.data/versions.js'
 
-const serializerTests = Object.entries(versions).map(([version, obj]) => ({
-  fn: serialize(obj),
-  expect: is.deep.equal(version),
-  info: `${version} gets serialized correctly`,
+const parserTests = Object.entries(versions).map(([version, obj]) => ({
+  fn: parse(version),
+  expect: is.deep.equal(obj),
+  info: `${version} gets parsed (${JSON.stringify(parse(version))}) correctly as ${JSON.stringify(obj)}`,
 }))
 
-const oneoneone = {
-  major: 1,
-  minor: 1,
-  patch: 1,
-}
-
 export default [
-  ...serializerTests,
+  ...parserTests,
   {
-    fn: tryCatch(serialize),
+    fn: tryCatch(parse),
     expect: t => t.name === 'E_ARG_EMPTY',
     info: 'missing argument errors with E_ARG_EMPTY',
   },
   {
-    fn: tryCatch(serialize, ''),
+    fn: tryCatch(parse, ''),
     expect: t => t.name === 'E_ARG_EMPTY',
     info: 'empty argument errors with E_ARG_EMPTY',
   },
   {
-    fn: tryCatch(serialize, 23),
+    fn: tryCatch(parse, 23),
     expect: t => t.name === 'E_ARG_TYPE',
     info: 'wrong argument type errors with E_ARG_TYPE',
   },
   {
-    fn: tryCatch(serialize, { test: true }),
-    expect: t => t.name === 'E_ARG_TYPE',
+    fn: tryCatch(parse, 'test.tset'),
+    expect: t => t.name === 'E_NOT_SEMVER',
     info: 'invalid semver errors with E_NOT_SEMVER',
   },
   {
-    fn: tryCatch(serialize, { ...oneoneone, major: 'string' }),
+    fn: tryCatch(parse, 'string.5.23-beta.42'),
     expect: t => t.name === 'E_MAJOR_TYPE',
     info: 'major version string throws E_MAJOR_TYPE',
   },
   {
-    fn: tryCatch(serialize, { ...oneoneone, minor: 'string' }),
+    fn: tryCatch(parse, '1.string.23-beta.42'),
     expect: t => t.name === 'E_MINOR_TYPE',
     info: 'minor version string throws E_MINOR_TYPE',
   },
   {
-    fn: tryCatch(serialize, { ...oneoneone, patch: 'string' }),
+    fn: tryCatch(parse, '1.5.string-beta.42'),
     expect: t => t.name === 'E_PATCH_TYPE',
     info: 'patch version string throws E_PATCH_TYPE',
   },
   {
-    fn: tryCatch(serialize, { ...oneoneone, demo: { string: 'string', version: 'string' } }),
+    fn: tryCatch(parse, '1.5.23-beta.string'),
     expect: t => t.name === 'E_DEMO_TYPE',
     info: 'demo version string throws E_DEMO_TYPE',
   },

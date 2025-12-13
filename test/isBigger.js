@@ -1,8 +1,8 @@
-import { tryCatch } from '@magic/test'
+// import { tryCatch } from '@magic/test'
 
-import { isBigger } from '../src/length.mjs'
+import { isBigger } from '../src/length.js'
 
-import { comparisons, smallerComparisons } from './.data/comparisons.mjs'
+import { comparisons, smallerComparisons } from './.data/comparisons.js'
 
 export default [
   ...comparisons.map(([a, b]) => ({

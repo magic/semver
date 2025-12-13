@@ -1,7 +1,7 @@
 import { is, tryCatch } from '@magic/test'
 
-import { bump } from '../src/bump.mjs'
-import { serialize } from '../src/serialize.mjs'
+import { bump } from '../src/bump.js'
+import { serialize } from '../src/serialize.js'
 
 const testObject = {
   '0.0.1': {
@@ -58,7 +58,7 @@ export default [
   {
     fn: bump('0.1.1', { alpha: true }),
     expect: '0.1.2-alpha.0',
-    info: '0.1.1 without { alpha: true } bumps to 0.1.2-alpha.0',
+    info: '0.1.1 with { alpha: true } bumps to 0.1.2-alpha.0',
   },
 
   { fn: bump('0.1.1'), expect: '0.1.2', info: '0.1.1 can be bumped' },

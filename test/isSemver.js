@@ -1,8 +1,8 @@
-import { tryCatch } from '@magic/test'
+// import { tryCatch } from '@magic/test'
 
-import { isSemver } from '../src/isSemver.mjs'
+import { isSemver } from '../src/isSemver.js'
 
-import { versions, broken } from './.data/versions.mjs'
+import { versions, broken } from './.data/versions.js'
 
 export default [
   ...Object.keys(versions).map(version => ({
