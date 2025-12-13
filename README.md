@@ -22,11 +22,13 @@ semantic version parsing and stringification
 [snyk-url]: https://snyk.io/test/github/magic/semver
 
 #### installation:
+
 ```javascript
 npm install @magic/semver
 ```
 
 #### usage:
+
 ```javascript
 import semver from '@magic/semver'
 
@@ -40,61 +42,77 @@ const parsed = semver.parse(version)
 const serialized = semver.serialize(parsed)
 
 // version === serialized
-
 ```
 
 ##### changelog
 
 ##### 0.0.1
+
 first release
 
 ##### 0.0.2
+
 add bump and isSemver
 
 ##### 0.0.3
+
 handle -alpha and -beta separately to stop decrementing the version by mistake.
 
 ##### 0.0.4
+
 fix behaviour of appending -alpha.0 and -beta.0.
 these two edgecases also bump patch version now.
 
 ##### 0.0.5
+
 add isBigger and isSmaller version comparison
 
 ##### 0.0.6
+
 remove @magic/fs
 
-##### 0.0.7 
+##### 0.0.7
+
 bump required node version to 14.2.0
 
-##### 0.0.8 
+##### 0.0.8
+
 update dependencies
 
 ##### 0.0.9
-* bump required node version to 14.15.4
-* update dependencies
+
+- bump required node version to 14.15.4
+- update dependencies
 
 ##### 0.0.10
-* update README
-* bump dev dependencies
 
-##### 0.0.11 
+- update README
+- bump dev dependencies
+
+##### 0.0.11
+
 update dependencies
 
 ##### 0.0.12
+
 update dependencies
 
 ##### 0.0.13
+
 update dependencies
 
 ##### 0.0.14
+
 update dependencies
 
 ##### 0.0.15
+
 update dependencies
 
 ##### 0.0.16
+
 update dependencies
 
 ##### 0.0.17 - unreleased
+
 ...
