@@ -1,8 +1,8 @@
-import { bump as b } from './bump.mjs'
-import { isBigger as isB, isSmaller as isS } from './length.mjs'
-import { isSemver as is } from './isSemver.mjs'
-import { parse as p } from './parse.mjs'
-import { serialize as s } from './serialize.mjs'
+import { bump as b } from './bump.js'
+import { isBigger as isB, isSmaller as isS } from './length.js'
+import { isSemver as is } from './isSemver.js'
+import { parse as p } from './parse.js'
+import { serialize as s } from './serialize.js'
 
 export const bump = b
 export const isBigger = isB

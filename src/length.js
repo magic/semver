@@ -1,6 +1,6 @@
 import is from '@magic/types'
 
-import { parse } from './parse.mjs'
+import { parse } from './parse.js'
 
 export const isBigger = (a, b) => {
   if (a === b) {

@@ -3,9 +3,9 @@ import path from 'path'
 import error from '@magic/error'
 import is from '@magic/types'
 
-import { parse } from './parse.mjs'
-import { serialize } from './serialize.mjs'
-import { isSemver } from './isSemver.mjs'
+import { parse } from './parse.js'
+import { serialize } from './serialize.js'
+import { isSemver } from './isSemver.js'
 
 const libName = '@magic/semver.bump'
 

@@ -1,6 +1,6 @@
 import is from '@magic/types'
-import { parse } from './parse.mjs'
-import { serialize } from './serialize.mjs'
+import { parse } from './parse.js'
+import { serialize } from './serialize.js'
 
 export const isSemver = v => {
   try {
