@@ -4,13 +4,8 @@ import error from '@magic/error'
 const libName = `@magic/semver.parse:`
 
 /**
- * @typedef {import('./types.js').Version} Version
- * @typedef {import('./types.js').VersionResult} VersionResult
- */
-
-/**
  * @param {string} v
- * @returns {VersionResult}
+ * @returns {import('./types.js').VersionResult}
  */
 export const parse = v => {
   if (is.empty(v)) {
@@ -27,7 +22,7 @@ export const parse = v => {
 
   const [major, minor, patch, demo] = v.split('.')
 
-  /** @type {VersionResult} */
+  /** @type {import('./types.js').VersionResult} */
   const result = {
     major: parseInt(major.replace('v', '')),
     minor: parseInt(minor),

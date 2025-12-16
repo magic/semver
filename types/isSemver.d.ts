@@ -1,2 +1,3 @@
-export function isSemver(v: Version | string | unknown): v is Version
-export type Version = import('./types.js').Version
+export function isSemver(
+  v: import('./types.js').Version | string | unknown,
+): v is import('./types.js').Version

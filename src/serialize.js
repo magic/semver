@@ -4,11 +4,7 @@ import error from '@magic/error'
 const libName = `@magic/semver.serialize:`
 
 /**
- *  @typedef {import('./types.js').Version} Version
- */
-
-/**
- * @param {Version | unknown} v
+ * @param {import('./types.js').Version | unknown} v
  * @returns {string}
  */
 export const serialize = v => {

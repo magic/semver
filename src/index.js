@@ -12,6 +12,9 @@ export const parse = p
 export const stringify = s
 export const serialize = s
 
+/** @typedef {import('./types.js').Version} Version */
+/** @typedef {import('./types.js').VersionResult} VersionResult */
+
 export default {
   bump,
   isBigger,

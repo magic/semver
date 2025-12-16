@@ -7,5 +7,4 @@ export function bump(
     beta?: boolean | undefined
     alpha?: boolean | undefined
   },
-): Version | string
-export type Version = import('./types.js').Version
+): import('./types.js').Version | string

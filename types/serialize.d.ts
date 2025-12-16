@@ -1,2 +1,1 @@
-export function serialize(v: Version | unknown): string
-export type Version = import('./types.js').Version
+export function serialize(v: import('./types.js').Version | unknown): string

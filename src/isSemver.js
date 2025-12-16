@@ -3,12 +3,8 @@ import { parse } from './parse.js'
 import { serialize } from './serialize.js'
 
 /**
- * @typedef {import('./types.js').Version} Version
- */
-
-/**
- * @param {Version | string | unknown} v
- * @returns {v is Version}
+ * @param {import('./types.js').Version | string | unknown} v
+ * @returns {v is import('./types.js').Version}
  *
  */
 export const isSemver = v => {
