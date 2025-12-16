@@ -122,6 +122,10 @@ update dependencies
 
 - fix handling a v in front of the version, eg v0.0.1
 
-##### 0.0.19 - unreleased
+##### 0.0.19
+
+- better type exports
+
+##### 0.0.20 - unreleased
 
 ...
