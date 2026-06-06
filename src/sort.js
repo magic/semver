@@ -37,33 +37,41 @@ const comparePreRelease = (a, b) => {
  * @returns {import('./types.js').Version[]}
  */
 export const sort = versions => {
-  return versions
-    .map(v => [v, is.str(v) ? parse(v) : v])
-    .sort(([, a], [, b]) => {
-      if (a.major !== b.major) {
-        return a.major - b.major
-      }
-      if (a.minor !== b.minor) {
-        return a.minor - b.minor
-      }
-      if (a.patch !== b.patch) {
-        return a.patch - b.patch
-      }
+  return /** @type {import('./types.js').Version[]} */ (
+    versions
+      .map(
+        v =>
+          /** @type {[string | import('./types.js').Version, import('./types.js').Version]} */ ([
+            v,
+            is.str(v) ? parse(v) : v,
+          ]),
+      )
+      .sort(([, a], [, b]) => {
+        if (a.major !== b.major) {
+          return a.major - b.major
+        }
+        if (a.minor !== b.minor) {
+          return a.minor - b.minor
+        }
+        if (a.patch !== b.patch) {
+          return a.patch - b.patch
+        }
 
-      const hasPreA = !!a.demo
-      const hasPreB = !!b.demo
+        const hasPreA = !!a.demo
+        const hasPreB = !!b.demo
 
-      if (hasPreA && !hasPreB) {
-        return -1
-      }
-      if (!hasPreA && hasPreB) {
-        return 1
-      }
-      if (hasPreA && hasPreB) {
-        return comparePreRelease(a.demo, b.demo)
-      }
+        if (hasPreA && !hasPreB) {
+          return -1
+        }
+        if (!hasPreA && hasPreB) {
+          return 1
+        }
+        if (hasPreA && hasPreB) {
+          return comparePreRelease(a.demo, b.demo)
+        }
 
-      return 0
-    })
-    .map(([original]) => original)
+        return 0
+      })
+      .map(([original]) => original)
+  )
 }
