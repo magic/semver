@@ -292,6 +292,10 @@ update dependencies
 - add documentation to README.md
 - update dependencies
 
-##### 0.0.21 - unreleased
+##### 0.0.21
+
+- update dependencies
+
+##### 0.0.22 - unreleased
 
 ...
