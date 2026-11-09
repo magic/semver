@@ -1,14 +1,31 @@
 {
   "name": "@magic/semver",
   "version": "0.0.21",
-  "author": "Wizards & Witches",
   "description": "semantic version parsing and serialization.",
-  "license": "AGPL-3.0",
   "homepage": "https://magic.github.io/semver",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
-  "module": "src/index.js",
+  "bugs": {
+    "url": "https://github.com/magic/semver/issues"
+  },
+  "license": "AGPL-3.0",
+  "author": "Wizards & Witches",
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "github": "jaeh"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magic/semver.git"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
   "type": "module",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "start": "npm test",
     "build": "npm run build:docs",
@@ -25,20 +42,9 @@
     "dev": "magic dev",
     "lint": "tsc --noEmit"
   },
-  "engine": {
-    "node": ">=14.15.4"
-  },
-  "engineStrict": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/magic/semver.git"
-  },
-  "bugs": {
-    "url": "https://github.com/magic/semver/issues"
-  },
   "dependencies": {
     "@magic/error": "0.0.24",
-    "@magic/types": "0.1.38"
+    "@magic/types": "0.1.40"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.12",
@@ -46,19 +52,16 @@
     "@magic-modules/no-spy": "0.0.9",
     "@magic-modules/pre": "0.0.12",
     "@magic-themes/docs": "0.0.15",
-    "@magic/core": "0.0.159",
-    "@magic/format": "0.0.74",
-    "@magic/test": "0.3.21",
-    "typescript": "6.0.3"
+    "@magic/core": "0.0.161",
+    "@magic/format": "0.0.77",
+    "@magic/test": "0.3.52",
+    "typescript": "npm:@typescript/typescript6"
   },
-  "files": [
-    "src",
-    "types"
-  ],
-  "contributors": [
-    {
-      "name": "jascha ehrenreich",
-      "github": "jaeh"
-    }
-  ]
+  "engineStrict": true,
+  "allowScripts": {
+    "@swc/core@1.15.47": true
+  },
+  "engine": {
+    "node": ">=14.15.4"
+  }
 }
