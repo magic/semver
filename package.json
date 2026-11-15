@@ -28,8 +28,7 @@
   "types": "types/index.d.ts",
   "scripts": {
     "start": "npm test",
-    "build": "npm run build:docs",
-    "build:types": "tsc && npm run format",
+    "build": "tsc && npm run format",
     "prepublishOnly": "npm run test && npm run build:types",
     "test": "t --exclude docs example config.js",
     "format": "f -w --exclude docs",
