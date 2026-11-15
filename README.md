@@ -284,6 +284,11 @@ update dependencies
 
 - update dependencies
 
-##### 0.0.22 - unreleased
+##### 0.0.22
+
+- add @magic/lint and tsc, fix type and lint errors
+- update dependencies
+
+##### 0.0.23 - unreleased
 
 ...
