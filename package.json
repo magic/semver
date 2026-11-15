@@ -40,7 +40,10 @@
     "clean": "magic clean",
     "serve": "magic serve",
     "dev": "magic dev",
-    "lint": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "tsc:test": "tsc --noEmit -p tsconfig.test.json",
+    "lint": "lint",
+    "check": "npm run tsc && npm run tsc:test && npm run lint"
   },
   "dependencies": {
     "@magic/error": "0.0.25",
@@ -54,6 +57,7 @@
     "@magic-themes/docs": "0.0.15",
     "@magic/core": "0.0.161",
     "@magic/format": "0.0.79",
+    "@magic/lint": "0.0.5",
     "@magic/test": "0.3.55",
     "typescript": "npm:@typescript/typescript6"
   },
