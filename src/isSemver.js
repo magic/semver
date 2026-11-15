@@ -18,7 +18,9 @@ export const isSemver = v => {
 
       return is.str(s) && is.num(parseInt(s.split('.')[1]))
     }
-  } catch {}
+  } catch {
+    // parse or serialize failure means it is not a valid semver
+  }
 
   return false
 }

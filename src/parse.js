@@ -31,7 +31,7 @@ export const parse = v => {
   }
 
   if (is.string(patch) && patch.includes('-')) {
-    let [p, demoString] = patch.split('-')
+    const [p, demoString] = patch.split('-')
     result.patch = parseInt(p)
 
     result.demo = {

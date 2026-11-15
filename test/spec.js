@@ -6,7 +6,6 @@ const spec = {
   parse: 'fn',
   stringify: 'fn',
   serialize: 'fn',
-  stringify: 'fn',
   bump: 'fn',
   isSemver: 'fn',
   isBigger: 'fn',

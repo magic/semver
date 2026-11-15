@@ -13,7 +13,7 @@ export const serialize = v => {
   }
 
   // the || v.major is a cheap test to make sure we get a valid object
-  if (!is.objectNative(v) || !v.hasOwnProperty('major')) {
+  if (!is.objectNative(v) || !Object.prototype.hasOwnProperty.call(v, 'major')) {
     throw error(`${libName} v must be an object`, 'E_ARG_TYPE')
   }
 
@@ -38,7 +38,8 @@ export const serialize = v => {
   let demoString = ''
 
   if (!is.empty(v.demo) && is.objectNative(v.demo)) {
-    let { version, string } = v.demo
+    const { string } = v.demo
+    let version = v.demo.version
 
     if (is.str(version)) {
       version = parseInt(version)

@@ -1,7 +1,4 @@
-import { is } from '@magic/test'
-
 import { sort } from '../src/sort.js'
-import { parse } from '../src/parse.js'
 
 const versionsInOrder = [
   'v0.0.1',

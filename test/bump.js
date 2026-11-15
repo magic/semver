@@ -1,4 +1,4 @@
-import { is, tryCatch } from '@magic/test'
+import { tryCatch } from '@magic/test'
 
 import { bump } from '../src/bump.js'
 import { serialize } from '../src/serialize.js'

@@ -11,7 +11,7 @@ export default [
     info: `isBigger: ${a} > ${b}: expect true`,
   })),
 
-  ...comparisons.map(([a, b, expect]) => ({
+  ...comparisons.map(([a, b]) => ({
     fn: isBigger(b, a),
     expect: false,
     info: `isBigger: ${b} > ${a}: expect false`,
@@ -23,7 +23,7 @@ export default [
     info: `isBigger: ${a} > ${b}: expect false`,
   })),
 
-  ...smallerComparisons.map(([a, b, expect]) => ({
+  ...smallerComparisons.map(([a, b]) => ({
     fn: isBigger(b, a),
     expect: false,
     info: `isBigger: ${b} > ${a}: expect false`,
