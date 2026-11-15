@@ -43,8 +43,8 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@magic/error": "0.0.24",
-    "@magic/types": "0.1.40"
+    "@magic/error": "0.0.25",
+    "@magic/types": "0.1.41"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.12",
@@ -53,8 +53,8 @@
     "@magic-modules/pre": "0.0.12",
     "@magic-themes/docs": "0.0.15",
     "@magic/core": "0.0.161",
-    "@magic/format": "0.0.77",
-    "@magic/test": "0.3.52",
+    "@magic/format": "0.0.79",
+    "@magic/test": "0.3.55",
     "typescript": "npm:@typescript/typescript6"
   },
   "engineStrict": true,
