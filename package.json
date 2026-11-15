@@ -29,7 +29,7 @@
   "scripts": {
     "start": "npm test",
     "build": "tsc && npm run format",
-    "prepublishOnly": "npm run test && npm run build:types",
+    "prepublishOnly": "npm run test && npm run build",
     "test": "t --exclude docs example config.js",
     "format": "f -w --exclude docs",
     "format:check": "f",
