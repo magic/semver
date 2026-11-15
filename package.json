@@ -1,6 +1,6 @@
 {
   "name": "@magic/semver",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "semantic version parsing and serialization.",
   "homepage": "https://magic.github.io/semver",
   "bugs": {
