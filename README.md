@@ -5,21 +5,9 @@ semantic version parsing and stringification
 [html-docs](https://github.magic.io/semver)
 
 [![NPM version][npm-image]][npm-url]
-[![Linux Build Status][travis-image]][travis-url]
-[![Windows Build Status][appveyor-image]][appveyor-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
 
 [npm-image]: https://img.shields.io/npm/v/@magic/semver.svg
 [npm-url]: https://www.npmjs.com/package/@magic/semver
-[travis-image]: https://img.shields.io/travis/com/magic/semver/master
-[travis-url]: https://travis-ci.com/magic/semver
-[appveyor-image]: https://img.shields.io/appveyor/ci/magic/semver/master.svg
-[appveyor-url]: https://ci.appveyor.com/project/magic/semver/branch/master
-[coveralls-image]: https://coveralls.io/repos/github/magic/semver/badge.svg
-[coveralls-url]: https://coveralls.io/github/magic/semver
-[snyk-image]: https://snyk.io/test/github/magic/semver/badge.svg
-[snyk-url]: https://snyk.io/test/github/magic/semver
 
 #### installation:
 
