@@ -45,8 +45,8 @@
     "check": "npm run tsc && npm run tsc:test && npm run lint"
   },
   "dependencies": {
-    "@magic/error": "0.0.25",
-    "@magic/types": "0.1.41"
+    "@magic/error": "0.0.26",
+    "@magic/types": "0.1.42"
   },
   "devDependencies": {
     "@magic-modules/git-badges": "0.0.12",
